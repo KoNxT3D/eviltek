@@ -1,0 +1,17 @@
+#!/bin/bash
+rm -r data
+mkdir -p data
+cd src
+
+./converter ../domains.txt ../data/converted-urls.txt
+./grabber
+./whois
+./ping-urls
+./trace
+cd ../
+echo ""
+echo "[✓]: InfoScan Results Complete!"
+echo "[✨] Creating Archive [✨]"
+zip -r backups/InfoScan-Archive-$(date +"%d-%m-%Y-%H:%M:%S").zip data/ 
+echo "[✓]: Archive Complete!"
+echo "Archives are stored in the backups directory"

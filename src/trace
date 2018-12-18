@@ -1,0 +1,5 @@
+echo -e "\n◀✠✨ Tracing Urls ✨✠▶";
+for i in $(cat ../domains.txt); do
+traceroute ${i} >> ../data/traced-urls.txt;
+echo "[✓]: "${i};
+done

@@ -1,0 +1,7 @@
+#!/bin/bash
+echo -e "\n[✨]Collecting WhoIs Information.[✨]\n"
+for domain in `cat ../domains.txt`
+do
+   echo "WhoIs: "$domain
+   `whois $domain >> ../data/whois-results.txt`
+done

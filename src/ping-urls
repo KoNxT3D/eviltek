@@ -1,0 +1,4 @@
+echo -e "\n";
+for i in $(cat ../domains.txt); do
+ping -c 1 ${i} >> ../data/pinged-urls.txt
+done

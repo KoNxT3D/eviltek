@@ -1,0 +1,1 @@
+for i in $(cat ../url-list.txt ); do curl -H "User-Agent: InfoScan/1.0 (Atari 2600) Commodore C64 (TRS-80)" -o ../data/$(basename $i).html $i ; done
